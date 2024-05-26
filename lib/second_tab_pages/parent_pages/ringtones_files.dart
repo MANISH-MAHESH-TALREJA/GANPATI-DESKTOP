@@ -3,12 +3,12 @@ import 'package:bitsdojo_window/bitsdojo_window.dart';
 import 'package:flutter/material.dart';
 import 'package:marquee_widget/marquee_widget.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
-import 'package:ganpati_desktop/MainPages/Other/AppBarDrawer.dart';
 import 'dart:convert';
 import 'package:http/http.dart';
-import 'package:ganpati_desktop/Models/RingtonesModel.dart';
-import 'package:ganpati_desktop/SecondTabPages/ChildPages/RingtonesOutput.dart';
-import '../../Constants.dart';
+import 'package:ganpati_desktop/Models/ringtones_model.dart';
+import '../../constants.dart';
+import '../../main_pages/other/app_bar_drawer.dart';
+import '../child_pages/ringtones_output.dart';
 
 // ignore: must_be_immutable
 class RingtoneFiles extends StatefulWidget

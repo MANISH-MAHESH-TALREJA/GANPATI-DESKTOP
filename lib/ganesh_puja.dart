@@ -1,12 +1,12 @@
 import 'package:bitsdojo_window/bitsdojo_window.dart';
 import 'package:flutter/material.dart';
 import 'package:contained_tab_bar_view/contained_tab_bar_view.dart';
-import 'Constants.dart';
-import 'MainPages/Other/AppBarDrawer.dart';
-import 'PujaOutput.dart';
+import 'constants.dart';
+import 'main_pages/other/app_bar_drawer.dart';
+import 'puja_output.dart';
 import 'dart:convert';
 import 'package:http/http.dart';
-import 'package:ganpati_desktop/Models/NationalSongsModel.dart';
+import 'package:ganpati_desktop/Models/national_songs_model.dart';
 
 // ignore: must_be_immutable
 class NavratriPuja extends StatefulWidget

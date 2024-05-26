@@ -3,11 +3,11 @@ import 'package:bitsdojo_window/bitsdojo_window.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:marquee_widget/marquee_widget.dart';
-import 'package:ganpati_desktop/MainPages/Other/AppBarDrawer.dart';
 import 'dart:convert';
 import 'package:http/http.dart';
-import 'package:ganpati_desktop/Models/MantraModel.dart';
-import '../../Constants.dart';
+import 'package:ganpati_desktop/Models/mantra_model.dart';
+import '../../constants.dart';
+import 'main_pages/other/app_bar_drawer.dart';
 
 // ignore: must_be_immutable
 class MantraList extends StatefulWidget

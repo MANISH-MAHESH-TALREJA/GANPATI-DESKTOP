@@ -2,10 +2,10 @@ import 'package:bitsdojo_window/bitsdojo_window.dart';
 import 'package:dart_vlc/dart_vlc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
-import 'package:ganpati_desktop/Constants.dart';
+import 'package:ganpati_desktop/constants.dart';
 import 'package:file_saver/file_saver.dart';
-import 'GeneralUtilityFunctions.dart';
-import 'MainPages/Other/AppBarDrawer.dart';
+import 'general_utility_functions.dart';
+import 'main_pages/other/app_bar_drawer.dart';
 
 class VideoStatusOutput extends StatefulWidget
 {

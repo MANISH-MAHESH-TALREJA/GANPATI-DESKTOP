@@ -5,8 +5,8 @@ import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_html/flutter_html.dart';
-import 'package:ganpati_desktop/GeneralUtilityFunctions.dart';
-import '../../Constants.dart';
+import 'package:ganpati_desktop/general_utility_functions.dart';
+import '../../constants.dart';
 
 class PujaOutput extends StatefulWidget
 {
@@ -43,7 +43,10 @@ class _PujaOutputState extends State<PujaOutput>
           });
     }
   }
-  Player? player;
+  // Player? player;
+  Player player = Player(
+    id: 0,
+  );
   Media? media;
   Playlist? playList;
   CurrentState current = new CurrentState();
@@ -62,7 +65,7 @@ class _PujaOutputState extends State<PujaOutput>
 
   Future<void> initDesktopAudioPlayer() async
   {
-    player = new Player(id: 69420);
+    // player = new Player(id: 69420);
     player!.open(
       new Playlist(
         medias:

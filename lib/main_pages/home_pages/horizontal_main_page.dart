@@ -1,17 +1,16 @@
 import 'package:bitsdojo_window/bitsdojo_window.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:ganpati_desktop/Constants.dart';
-import 'package:ganpati_desktop/FirstTabPages/ParentPages/ImageFiles.dart';
-import 'package:ganpati_desktop/FirstTabPages/ParentPages/NationalSymbols.dart';
-import 'package:ganpati_desktop/MainPages/Other/AppBarDrawer.dart';
-import 'package:ganpati_desktop/MainPages/PortraitPages/ThirdPage.dart';
-import 'package:ganpati_desktop/SubCategory.dart';
-
+import 'package:ganpati_desktop/constants.dart';
+import 'package:ganpati_desktop/sub_category.dart';
 import 'package:shimmer/shimmer.dart';
-import '../../GaneshPuja.dart';
-import '../../MantraList.dart';
+import '../../first_tab_pages/parent_pages/image_files.dart';
+import '../../first_tab_pages/parent_pages/national_symbols.dart';
+import '../../ganesh_puja.dart';
+import '../../mantra_list.dart';
 import '../../keyboard_shortcuts.dart';
+import '../other/app_bar_drawer.dart';
+import '../portrait_pages/third_page.dart';
 
 class HorizontalMainPage extends StatefulWidget
 {

@@ -4,11 +4,12 @@ import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_html/flutter_html.dart';
-import 'package:ganpati_desktop/GeneralUtilityFunctions.dart';
-import 'package:ganpati_desktop/MainPages/Other/AppBarDrawer.dart';
-import '../../Constants.dart';
+import 'package:ganpati_desktop/general_utility_functions.dart';
+import '../../constants.dart';
 import 'package:dart_vlc/dart_vlc.dart';
 import 'package:file_saver/file_saver.dart';
+
+import '../../main_pages/other/app_bar_drawer.dart';
 
 class NationalSongsOutput extends StatefulWidget
 {

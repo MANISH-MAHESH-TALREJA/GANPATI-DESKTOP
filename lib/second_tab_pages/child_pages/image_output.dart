@@ -2,9 +2,9 @@ import 'package:bitsdojo_window/bitsdojo_window.dart';
 import 'package:file_saver/file_saver.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
-import 'package:ganpati_desktop/Constants.dart';
-import 'package:ganpati_desktop/GeneralUtilityFunctions.dart';
-import 'package:ganpati_desktop/MainPages/Other/AppBarDrawer.dart';
+import 'package:ganpati_desktop/constants.dart';
+import 'package:ganpati_desktop/general_utility_functions.dart';
+import '../../main_pages/other/app_bar_drawer.dart';
 
 // ignore: must_be_immutable
 class ImageOutput extends StatefulWidget

@@ -1,12 +1,12 @@
 import 'package:bitsdojo_window/bitsdojo_window.dart';
 import 'package:flutter/material.dart';
 import 'package:marquee_widget/marquee_widget.dart';
-import 'package:ganpati_desktop/FirstTabPages/ChildPages/NationalSongsOutput.dart';
-import 'package:ganpati_desktop/MainPages/Other/AppBarDrawer.dart';
 import 'dart:convert';
 import 'package:http/http.dart';
-import 'package:ganpati_desktop/Models/NationalSongsModel.dart';
-import '../../Constants.dart';
+import 'package:ganpati_desktop/Models/national_songs_model.dart';
+import '../../constants.dart';
+import '../../main_pages/other/app_bar_drawer.dart';
+import '../child_pages/national_songs_output.dart';
 
 // ignore: must_be_immutable
 class NationalSongs extends StatefulWidget

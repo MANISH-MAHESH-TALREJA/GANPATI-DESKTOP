@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'package:bitsdojo_window/bitsdojo_window.dart';
 import 'package:flutter/material.dart';
-import 'package:ganpati_desktop/GeneralUtilityFunctions.dart';
-import '../../Constants.dart';
+import 'package:ganpati_desktop/general_utility_functions.dart';
+import '../../constants.dart';
 import 'package:dart_vlc/dart_vlc.dart';
 import 'package:file_saver/file_saver.dart';
 import 'package:flutter/widgets.dart';

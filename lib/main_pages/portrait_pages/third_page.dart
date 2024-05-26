@@ -2,12 +2,11 @@ import 'dart:math' as math;
 import 'package:animated_background/animated_background.dart';
 import 'package:bitsdojo_window/bitsdojo_window.dart';
 import 'package:flutter/material.dart';
-import 'package:ganpati_desktop/Constants.dart';
-import 'package:ganpati_desktop/MainPages/Other/AppBarDrawer.dart';
-
+import 'package:ganpati_desktop/constants.dart';
 import '../../infinite_cards/src/anim_transform.dart';
 import '../../infinite_cards/src/infinite_card_view.dart';
 import '../../infinite_cards/src/infinite_cards_controller.dart';
+import '../other/app_bar_drawer.dart';
 
 class ThirdPage extends StatefulWidget
 {

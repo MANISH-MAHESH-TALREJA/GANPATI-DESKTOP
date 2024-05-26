@@ -1,13 +1,13 @@
 import 'package:bitsdojo_window/bitsdojo_window.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:ganpati_desktop/VideoFiles.dart';
-import 'Constants.dart';
-import 'FirstTabPages/ParentPages/ImageFiles.dart';
-import 'FirstTabPages/ParentPages/NationalSongs.dart';
-import 'MainPages/Other/AppBarDrawer.dart';
-import 'SecondTabPages/ParentPages/RingtoneFiles.dart';
+import 'package:ganpati_desktop/second_tab_pages/parent_pages/ringtones_files.dart';
+import 'package:ganpati_desktop/video_files.dart';
+import 'constants.dart';
+import 'first_tab_pages/parent_pages/image_files.dart';
+import 'first_tab_pages/parent_pages/national_songs.dart';
 import 'keyboard_shortcuts.dart';
+import 'main_pages/other/app_bar_drawer.dart';
 
 class SubCategory extends StatefulWidget 
 {
@@ -44,7 +44,7 @@ class _SubCategoryState extends State<SubCategory>
                     keysToPress: {LogicalKeyboardKey.controlLeft, LogicalKeyboardKey.keyI},
                     onKeysPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => NationalSongs(Constants.NationalSongsAPI, Constants.AppBarSongs))),
                     helpLabel: "AARTI PAGE",
-                    child: LandScapeCard("assets/images/ganpati_05.gif", "AARTI",NationalSongs(Constants.NationalSongsAPI, Constants.AppBarSongs), true),
+                    child: LandScapeCard("assets/images/ganpati_05.gif", "AARTI", NationalSongs(Constants.NationalSongsAPI, Constants.AppBarSongs), true),
                   ),
                 ],
               ),

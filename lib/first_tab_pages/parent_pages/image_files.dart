@@ -1,11 +1,11 @@
 import 'package:bitsdojo_window/bitsdojo_window.dart';
 import 'package:flutter/material.dart';
-import 'package:ganpati_desktop/MainPages/Other/AppBarDrawer.dart';
 import 'dart:convert';
 import 'package:http/http.dart';
-import 'package:ganpati_desktop/Models/ImageModel.dart';
-import 'package:ganpati_desktop/SecondTabPages/ChildPages/ImageOutput.dart';
-import '../../Constants.dart';
+import 'package:ganpati_desktop/Models/image_model.dart';
+import '../../constants.dart';
+import '../../main_pages/other/app_bar_drawer.dart';
+import '../../second_tab_pages/child_pages/image_output.dart';
 
 // ignore: must_be_immutable
 class ImageFiles extends StatefulWidget

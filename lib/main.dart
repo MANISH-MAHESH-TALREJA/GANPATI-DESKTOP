@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:ganpati_desktop/Constants.dart';
-import 'SplashScreen.dart';
+import 'package:ganpati_desktop/constants.dart';
+import 'splash_screen.dart';
 import 'package:bitsdojo_window/bitsdojo_window.dart';
 
 void main() async

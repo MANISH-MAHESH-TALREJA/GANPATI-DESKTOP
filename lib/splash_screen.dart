@@ -2,8 +2,8 @@ import 'dart:async';
 import 'package:bitsdojo_window/bitsdojo_window.dart';
 import 'package:desktoasts/desktoasts.dart';
 import 'package:flutter/material.dart';
-import 'package:ganpati_desktop/MainPages/HomePages/HorizontalMainPage.dart';
-import 'Constants.dart';
+import 'constants.dart';
+import 'main_pages/home_pages/horizontal_main_page.dart';
 
 class SplashScreen extends StatefulWidget
 {

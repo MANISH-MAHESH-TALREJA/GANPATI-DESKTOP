@@ -1,12 +1,12 @@
 import 'package:bitsdojo_window/bitsdojo_window.dart';
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
-import 'package:ganpati_desktop/MainPages/Other/AppBarDrawer.dart';
 import 'dart:convert';
 import 'package:http/http.dart';
-import 'package:ganpati_desktop/Models/NationalDetailModel.dart';
-import '../../Constants.dart';
-import '../../GeneralUtilityFunctions.dart';
+import 'package:ganpati_desktop/Models/national_detail_model.dart';
+import '../../constants.dart';
+import '../../general_utility_functions.dart';
+import '../../main_pages/other/app_bar_drawer.dart';
 
 // ignore: must_be_immutable
 class NationalSymbols extends StatefulWidget

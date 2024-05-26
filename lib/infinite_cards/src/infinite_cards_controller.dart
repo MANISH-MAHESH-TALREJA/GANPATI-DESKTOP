@@ -161,7 +161,7 @@ class InfiniteCardsController {
 
   bool get clickItemToSwitch => _clickItemToSwitch;
 
-  Duration get animDuration => _animDuration!;
+  Duration? get animDuration => _animDuration;
 
   int get itemCount => _itemCount;
 

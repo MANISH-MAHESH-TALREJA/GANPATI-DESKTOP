@@ -2,8 +2,8 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:bitsdojo_window/bitsdojo_window.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import '../../Constants.dart';
-import '../../GeneralUtilityFunctions.dart';
+import '../../constants.dart';
+import '../../general_utility_functions.dart';
 
 class RepublicDrawer extends StatelessWidget
 {
