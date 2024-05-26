@@ -53,7 +53,7 @@ class _NationalSymbolsState extends State<NationalSymbols>
   }
 
 
-  List<NationalDetailModel> categories;
+  List<NationalDetailModel>? categories;
   Future<List<NationalDetailModel>> getData(String page) async
   {
     Response response;
@@ -64,7 +64,7 @@ class _NationalSymbolsState extends State<NationalSymbols>
     if (statusCode == 200)
     {
       categories = (body as List).map((i) => NationalDetailModel.fromJson(i)).toList();
-      return categories;
+      return categories!;
     }
     else
     {
@@ -87,7 +87,7 @@ class _NationalSymbolsState extends State<NationalSymbols>
           itemBuilder: (BuildContext context, int index)
           {
             final value = data[index];
-            return ContactWidget(value.image, value.name,value.detail, value.link);
+            return ContactWidget(value.image!, value.name!, value.detail!, value.link!);
           }, gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 1,
       ),),
     );
@@ -97,7 +97,7 @@ class _NationalSymbolsState extends State<NationalSymbols>
 // ignore: must_be_immutable
 class ContactWidget extends StatelessWidget
 {
-  String image, title, description, link;
+  String? image, title, description, link;
 
   ContactWidget(String image, String title, String description, String link)
   {
@@ -128,7 +128,7 @@ class ContactWidget extends StatelessWidget
                     child: SizedBox(
                       height: MediaQuery.of(context).size.height*0.6,
                       width: MediaQuery.of(context).size.width*0.6,
-                      child: ClipRRect(borderRadius: BorderRadius.circular(8.0),child: CustomCacheImage(imageUrl: image,)
+                      child: ClipRRect(borderRadius: BorderRadius.circular(8.0),child: CustomCacheImage(imageUrl: image!,)
                       )
                     ),
                   ),
@@ -143,12 +143,12 @@ class ContactWidget extends StatelessWidget
                       header: Padding(
                           padding: EdgeInsets.all(10),
                           child: Text(
-                            title,
+                            title!,
                             style: TextStyle(fontSize: 20,color: Constants.OrangeColor, fontFamily: Constants.AppFont, fontWeight: FontWeight.bold),
                           )
                       ),
                       collapsed: Text(
-                        description,
+                        description!,
                         softWrap: true,
                         maxLines: 2,
                         style: TextStyle(fontSize: 15,color: Constants.BlueColor, fontFamily: Constants.AppFont),
@@ -161,7 +161,7 @@ class ContactWidget extends StatelessWidget
                           Padding(
                               padding: EdgeInsets.only(bottom: 10),
                               child: Text(
-                                description,
+                                description!,
                                 softWrap: true,
                                 style: TextStyle(fontSize: 15,color: Constants.BlueColor, fontFamily: Constants.AppFont),
                                 overflow: TextOverflow.fade,
@@ -184,16 +184,16 @@ class ContactWidget extends StatelessWidget
                                   ),
                                 ),
                                 style: ButtonStyle(
-                                    foregroundColor: MaterialStateProperty.all<Color>(Constants.OrangeColor),
-                                    backgroundColor: MaterialStateProperty.all<Color>(Constants.OrangeColor),
-                                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                    foregroundColor: WidgetStateProperty.all<Color>(Constants.OrangeColor),
+                                    backgroundColor: WidgetStateProperty.all<Color>(Constants.OrangeColor),
+                                    shape: WidgetStateProperty.all<RoundedRectangleBorder>(
                                         RoundedRectangleBorder(
                                             borderRadius: BorderRadius.circular(10.00),
                                             side: BorderSide(color: Constants.GreenColor)
                                         )
                                     )
                                 ),
-                                onPressed: () => launchLink(link)
+                                onPressed: () => launchLink(link!)
                             ),
                           ),
                         ],

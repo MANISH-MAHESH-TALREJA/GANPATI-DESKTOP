@@ -7,10 +7,11 @@ import 'package:ganpati_desktop/FirstTabPages/ParentPages/NationalSymbols.dart';
 import 'package:ganpati_desktop/MainPages/Other/AppBarDrawer.dart';
 import 'package:ganpati_desktop/MainPages/PortraitPages/ThirdPage.dart';
 import 'package:ganpati_desktop/SubCategory.dart';
-import 'package:keyboard_shortcuts/keyboard_shortcuts.dart';
+
 import 'package:shimmer/shimmer.dart';
 import '../../GaneshPuja.dart';
 import '../../MantraList.dart';
+import '../../keyboard_shortcuts.dart';
 
 class HorizontalMainPage extends StatefulWidget
 {

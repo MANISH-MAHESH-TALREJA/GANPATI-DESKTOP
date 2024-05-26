@@ -11,7 +11,7 @@ class ImageOutput extends StatefulWidget
 {
   String image;
   String imageType;
-  ImageOutput({Key key, @required this.image, @required this.imageType}) : super(key: key);
+  ImageOutput({required this.image, required this.imageType});
   @override
   _ImageOutputState createState() => _ImageOutputState();
 }
@@ -48,8 +48,8 @@ class _ImageOutputState extends State<ImageOutput>
           ),
         ),
         floatingActionButton: SpeedDial(
-          marginEnd: 20,
-          marginBottom: 20,
+          // marginEnd: 20,
+          // marginBottom: 20,
           icon: Icons.file_download,
           activeIcon: Icons.close,
           animatedIconTheme: IconThemeData(size: 22.0),
@@ -70,7 +70,7 @@ class _ImageOutputState extends State<ImageOutput>
                 backgroundColor: Colors.yellow,
                 label: 'SAVE TO DOWNLOADS FOLDER',
                 labelStyle: TextStyle(fontSize: 18.0),
-                onTap: ()  => downloadWindowsFile(context, widget.imageType, widget.image, MimeType.PNG),
+                onTap: ()  => downloadWindowsFile(context, widget.imageType, widget.image, MimeType.png),
             ),
           ],
         ),

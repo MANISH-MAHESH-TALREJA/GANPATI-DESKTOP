@@ -11,7 +11,7 @@ void main() async
     title: Constants.AppName,
     debugShowCheckedModeBanner: false,
     theme: ThemeData(primarySwatch: Colors.deepOrange, fontFamily: Constants.AppFont, appBarTheme: AppBarTheme(
-      brightness: Brightness.light
+      systemOverlayStyle: SystemUiOverlayStyle.dark
     )),
     home: SplashScreen(),
   ));

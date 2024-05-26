@@ -25,27 +25,27 @@ class _PujaOutputState extends State<PujaOutput>
     initDesktopAudioPlayer();
     if (this.mounted)
     {
-          this.player?.currentStream?.listen((current)
+          this.player!.currentStream.listen((current)
           {
             this.setState(() => this.current = current);
           });
-          this.player?.positionStream?.listen((position)
+          this.player!.positionStream.listen((position)
           {
             this.setState(() => this.position = position);
           });
-          this.player?.playbackStream?.listen((playback)
+          this.player!.playbackStream.listen((playback)
           {
             this.setState(() => this.playback = playback);
           });
-          this.player?.generateStream?.listen((general)
+          this.player!.generalStream.listen((general)
           {
             this.setState(() => this.general = general);
           });
     }
   }
-  Player player;
-  Media media;
-  Playlist playList;
+  Player? player;
+  Media? media;
+  Playlist? playList;
   CurrentState current = new CurrentState();
   PositionState position = new PositionState();
   PlaybackState playback = new PlaybackState();
@@ -55,15 +55,15 @@ class _PujaOutputState extends State<PujaOutput>
   @override
   void dispose()
   {
-    player.stop();
-    player.dispose();
+    player!.stop();
+    player!.dispose();
     super.dispose();
   }
 
   Future<void> initDesktopAudioPlayer() async
   {
     player = new Player(id: 69420);
-    player.open(
+    player!.open(
       new Playlist(
         medias:
         [
@@ -100,10 +100,10 @@ class _PujaOutputState extends State<PujaOutput>
               front: Padding(
                 padding: const EdgeInsets.symmetric(vertical : 5.0),
                 child: Center(child: SingleChildScrollView(child: Html(
-                    defaultTextStyle: TextStyle(
+                    /*defaultTextStyle: TextStyle(
                         fontSize: 17,
                         fontWeight: FontWeight.w500,
-                        color: Colors.white),
+                        color: Colors.white),*/
                     data: '''  ${"<center>"+widget.hindi+"</center>"}   '''),
                   controller: ScrollController(),
                 )),
@@ -116,10 +116,10 @@ class _PujaOutputState extends State<PujaOutput>
                 child: Padding(
                   padding: const EdgeInsets.symmetric(vertical : 5.0),
                   child: Center(child: SingleChildScrollView(child: Html(
-                      defaultTextStyle: TextStyle(
+                      /*defaultTextStyle: TextStyle(
                           fontSize: 17,
                           fontWeight: FontWeight.w500,
-                          color: Colors.white),
+                          color: Colors.white),*/
                       data: '''  ${"<center>"+widget.english+"</center>"}   '''),
                   )),
                 ),
@@ -154,8 +154,8 @@ class _PujaOutputState extends State<PujaOutput>
                   ),
                   Slider(
                     min: 0,
-                    max: this.position.duration.inMilliseconds.toDouble(),
-                    value: this.position.position.inMilliseconds.toDouble(),
+                    max: this.position.duration!.inMilliseconds.toDouble(),
+                    value: this.position.position!.inMilliseconds.toDouble(),
                     onChanged: (double position) => this.player?.seek(Duration(milliseconds: position.toInt()))
                   ),
                   Row(
@@ -168,25 +168,25 @@ class _PujaOutputState extends State<PujaOutput>
                             style: TextStyle(fontSize: 14,color: Constants.BlueColor, fontFamily: Constants.AppFont)),
                       ),
                       IconButton(
-                        onPressed: () => player.play(),
+                        onPressed: () => player!.play(),
                         icon: Icon(Icons.play_circle_outline),
                         iconSize: 40,
                         color: Colors.blue,
                       ),
                       IconButton(
-                        onPressed: () => player.pause(),
+                        onPressed: () => player!.pause(),
                         iconSize: 40.0,
                         icon: Icon(Icons.pause_circle_outline_outlined),
                         color: Colors.teal,
                       ),
                       IconButton(
-                        onPressed: () => player.stop(),
+                        onPressed: () => player!.stop(),
                         icon: Icon(Icons.stop_circle_outlined),
                         iconSize: 40,
                         color: Colors.red,
                       ),
                        IconButton(
-                        onPressed: ()  => downloadWindowsFile(context, widget.name, widget.url, MimeType.MP3),
+                        onPressed: ()  => downloadWindowsFile(context, widget.name, widget.url, MimeType.mp3),
                         iconSize: 40,
                         icon: Icon(Icons.arrow_circle_down_outlined),
                         color: Colors.purple,

@@ -4,7 +4,6 @@ import 'package:contained_tab_bar_view/contained_tab_bar_view.dart';
 import 'Constants.dart';
 import 'MainPages/Other/AppBarDrawer.dart';
 import 'PujaOutput.dart';
-import 'package:ganpati_desktop/MainPages/Other/AppBarDrawer.dart';
 import 'dart:convert';
 import 'package:http/http.dart';
 import 'package:ganpati_desktop/Models/NationalSongsModel.dart';
@@ -53,7 +52,7 @@ class _NavratriPujaState extends State<NavratriPuja>
     );
   }
 
-  List<NationalSongsModel> categories;
+  List<NationalSongsModel>? categories;
   Future<List<NationalSongsModel>> getProductList(String page) async
   {
     Response response;
@@ -64,7 +63,7 @@ class _NavratriPujaState extends State<NavratriPuja>
     if (statusCode == 200)
     {
       categories = (body as List).map((i) => NationalSongsModel.fromJson(i)).toList();
-      return categories;
+      return categories!;
     }
     else
     {
@@ -80,7 +79,7 @@ class _NavratriPujaState extends State<NavratriPuja>
       tabs: [Text('CHALISA', style: TextStyle(color: Constants.BlueColor)), Text('STUTI', style: TextStyle(color: Constants.BlueColor)), Text('AARTI', style: TextStyle(color: Constants.BlueColor))],
       tabBarProperties: TabBarProperties(
           alignment: TabBarAlignment.center,
-          innerPadding: const EdgeInsets.symmetric(
+          labelPadding: const EdgeInsets.symmetric(
             horizontal: 10.0,
             vertical: 8.0,
           ),
@@ -92,7 +91,7 @@ class _NavratriPujaState extends State<NavratriPuja>
           ),
           labelColor: Colors.white,
           unselectedLabelColor: Colors.grey[400]),
-      views: [PujaOutput(data[0].name, data[0].link, data[0].english, data[0].hindi), PujaOutput(data[0].name, data[1].link, data[1].english, data[1].hindi), PujaOutput(data[0].name, data[2].link, data[2].english, data[2].hindi)],
+      views: [PujaOutput(data[0].name!, data[0].link!, data[0].english!, data[0].hindi!), PujaOutput(data[0].name!, data[1].link!, data[1].english!, data[1].hindi!), PujaOutput(data[0].name!, data[2].link!, data[2].english!, data[2].hindi!)],
       onChange: (index) => print(index),
     );
   }

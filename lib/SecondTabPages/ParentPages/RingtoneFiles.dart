@@ -54,7 +54,7 @@ class _RingtoneFilesState extends State<RingtoneFiles>
     );
   }
 
-  List<RingtonesModel> categories;
+  List<RingtonesModel>? categories;
   Future<List<RingtonesModel>> getProductList(String page) async
   {
     Response response;
@@ -65,7 +65,7 @@ class _RingtoneFilesState extends State<RingtoneFiles>
     if (statusCode == 200)
     {
       categories = (body as List).map((i) => RingtonesModel.fromJson(i)).toList();
-      return categories;
+      return categories!;
     }
     else
     {
@@ -77,7 +77,7 @@ class _RingtoneFilesState extends State<RingtoneFiles>
   Widget TirangaCard(int index, RingtonesModel value)
   {
     return GestureDetector(
-      onTap: () => showMaterialModalBottomSheet(context: context, builder: (context) => AudioApp(value.audioLink, value.audioName)),
+      onTap: () => showMaterialModalBottomSheet(context: context, builder: (context) => AudioApp(value.audioLink!, value.audioName!)),
       child: Padding(
         padding: const EdgeInsets.all(5.0),
         child: Card(
@@ -108,7 +108,7 @@ class _RingtoneFilesState extends State<RingtoneFiles>
                           textDirection : TextDirection.ltr,
                           animationDuration: Duration(seconds: 3),
                           directionMarguee: DirectionMarguee.oneDirection,
-                          child: Text(value.audioName.toUpperCase(), maxLines: 2, //textAlign: TextAlign.center,
+                          child: Text(value.audioName!.toUpperCase(), maxLines: 2, //textAlign: TextAlign.center,
                               style: TextStyle(fontSize: 20,color: (index+1)%2==0?Constants.BlueColor:Colors.white, fontFamily: Constants.AppFont, fontWeight: FontWeight.bold)))),
                     ),
                   ])

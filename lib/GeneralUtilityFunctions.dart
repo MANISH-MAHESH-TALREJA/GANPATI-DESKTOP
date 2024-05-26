@@ -8,7 +8,7 @@ import 'Constants.dart';
 
 void showToast(BuildContext context, String message)
 {
-  Toast.show(message, context, duration: Toast.LENGTH_LONG, gravity: Toast.BOTTOM, backgroundColor: Constants.OrangeColor, textColor: Constants.GreenColor);
+  Toast.show(message, duration: Toast.lengthLong, gravity: Toast.bottom, backgroundColor: Constants.OrangeColor, textStyle: TextStyle(color: Constants.GreenColor));
 }
 
 String mediaChecker(String url)
@@ -63,7 +63,7 @@ void downloadWindowsFile(BuildContext context, String fileName, String url, Mime
           if (statusCode == 200)
           {
             String mediaFileName  = DateTime.now().year.toString()+DateTime.now().month.toString()+DateTime.now().day.toString()+DateTime.now().hour.toString()+DateTime.now().minute.toString()+DateTime.now().second.toString()+DateTime.now().microsecond.toString();
-            await FileSaver.instance.saveFile(fileName+" - "+mediaFileName, response.bodyBytes, mediaChecker(url), mimeType: mimeType);
+            await FileSaver.instance.saveFile(name: fileName+" - "+mediaFileName, bytes: response.bodyBytes, ext: mediaChecker(url), mimeType: mimeType, );
             Alert(
               context: context,
               style: AlertStyle(
@@ -158,9 +158,9 @@ void downloadWindowsFile(BuildContext context, String fileName, String url, Mime
 
 void launchLink(String link)
 {
-  if (canLaunch(link) != null)
+  if (canLaunchUrl(Uri.parse(link)) != null)
   {
-    launch(link);
+    launchUrl(Uri.parse(link));
   }
   else
   {

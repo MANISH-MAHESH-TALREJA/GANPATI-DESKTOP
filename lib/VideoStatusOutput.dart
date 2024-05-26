@@ -18,14 +18,13 @@ class VideoStatusOutput extends StatefulWidget
 
 class _VideoStatusOutputState extends State<VideoStatusOutput>
 {
-  Player player;
-  Media media;
-  Playlist playList;
+  Player? player;
+  Media? media;
+  Playlist? playList;
   Future<void> initDesktopAudioPlayer() async
   {
-    player = new Player(id: 69420, videoWidth: 620,
-      videoHeight: 360,);
-    player.open(
+    player = new Player(id: 69420, videoDimensions: VideoDimensions(620,360));
+    player!.open(
       new Playlist(
         medias:
         [
@@ -39,8 +38,8 @@ class _VideoStatusOutputState extends State<VideoStatusOutput>
   @override
   void dispose()
   {
-    player.stop();
-    player.dispose();
+    player!.stop();
+    player!.dispose();
     super.dispose();
   }
 
@@ -68,8 +67,8 @@ class _VideoStatusOutputState extends State<VideoStatusOutput>
         appBar: RepublicDrawer().RepublicAppBar(context, Constants.OutputAppBarTitle),
         floatingActionButtonLocation: FloatingActionButtonLocation.miniEndTop,
         floatingActionButton: SpeedDial(
-          marginEnd: 20,
-          marginBottom: 20,
+          // marginEnd: 20,
+          // marginBottom: 20,
           icon: Icons.file_download,
           activeIcon: Icons.close,
           animatedIconTheme: IconThemeData(size: 22.0),
@@ -90,13 +89,13 @@ class _VideoStatusOutputState extends State<VideoStatusOutput>
               backgroundColor: Colors.yellow,
               label: 'SAVE TO DOWNLOADS FOLDER',
               labelStyle: TextStyle(fontSize: 18.0),
-              onTap: ()  => downloadWindowsFile(context, widget.name, widget.url, MimeType.MPEG),
+              onTap: ()  => downloadWindowsFile(context, widget.name, widget.url, MimeType.mpeg),
             ),
           ],
         ),
         body: Center(
           child: Video(
-            playerId: 69420,
+            // playerId: 69420,
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height*0.9,
             showControls: true, // default

@@ -58,7 +58,7 @@ class _WindowsVideoFilesState extends State<WindowsVideoFiles>
     );
   }
 
-  List<VideoStatusModel> categories;
+  List<VideoStatusModel>? categories;
   Future<List<VideoStatusModel>> getProductList(String page) async
   {
     Response response;
@@ -69,7 +69,7 @@ class _WindowsVideoFilesState extends State<WindowsVideoFiles>
     if (statusCode == 200)
     {
       categories = (body as List).map((i) => VideoStatusModel.fromJson(i)).toList();
-      return categories;
+      return categories!;
     }
     else
     {
@@ -93,7 +93,7 @@ class _WindowsVideoFilesState extends State<WindowsVideoFiles>
         return Padding(
           padding: const EdgeInsets.all(5.0),
           child: GestureDetector(
-            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => VideoStatusOutput(value.videoUrl, value.videoName))),
+            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => VideoStatusOutput(value.videoUrl!, value.videoName!))),
             child: Card(
               elevation: 2,
               shape: RoundedRectangleBorder(
@@ -108,7 +108,7 @@ class _WindowsVideoFilesState extends State<WindowsVideoFiles>
                       height: MediaQuery.of(context).size.width / 2 -50,
                       child: ClipRRect(
                           borderRadius: BorderRadius.circular(8.0),
-                          child: CustomCacheImage(imageUrl: value.videoThumbnail,)//Image.network(value.wallpaperImages, fit: BoxFit.fill,)
+                          child: CustomCacheImage(imageUrl: value.videoThumbnail!,)//Image.network(value.wallpaperImages, fit: BoxFit.fill,)
                       ),
                     ),
                   ),
